@@ -1,7 +1,4 @@
-'use client';
-
 import PageBanner from '@/components/ui/PageBanner';
-import { motion } from 'framer-motion';
 import { CheckCircle, Phone, Mail, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
@@ -214,6 +211,12 @@ const serviceData: Record<string, {
   }
 };
 
+export async function generateStaticParams() {
+  return Object.keys(serviceData).map((slug) => ({
+    slug,
+  }));
+}
+
 export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params;
   const service = serviceData[slug];
@@ -242,12 +245,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <section className="py-20 px-4 bg-[var(--bg-main)]">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
+            <div>
               <h1 className="text-4xl md:text-5xl font-bold text-[var(--text-main)] mb-6">
                 {service.intro.heading}
               </h1>
@@ -270,48 +268,30 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative h-96 rounded-2xl overflow-hidden"
-            >
+            <div className="relative h-96 rounded-2xl overflow-hidden">
               <img
                 src={service.intro.images[0]}
                 alt={service.title}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-            </motion.div>
+            </div>
           </div>
 
           {/* Second Image */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative h-96 rounded-2xl overflow-hidden order-2 lg:order-1"
-            >
+            <div className="relative h-96 rounded-2xl overflow-hidden order-2 lg:order-1">
               <img
                 src={service.intro.images[1]}
                 alt={service.title}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="order-1 lg:order-2"
-            >
+            <div className="order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-main)] mb-6">
                 {service.features.heading}
               </h2>
@@ -327,7 +307,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -335,11 +315,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       {/* Conclusion Section */}
       <section className="py-20 px-4 bg-[var(--bg-card)]">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-main)] mb-6">
               {service.conclusion.heading}
             </h2>
@@ -361,7 +337,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 </button>
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

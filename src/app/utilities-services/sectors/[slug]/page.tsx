@@ -111,6 +111,12 @@ const sectorData: Record<string, { title: string; description: string; services:
   }
 };
 
+export async function generateStaticParams() {
+  return Object.keys(sectorData).map((slug) => ({
+    slug,
+  }));
+}
+
 export default function SectorPage({ params }: SectorPageProps) {
   const sector = sectorData[params.slug];
 
