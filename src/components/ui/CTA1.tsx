@@ -28,15 +28,15 @@ export default function CTA1() {
             </p>
             <div className="mt-8 flex w-full flex-col justify-between gap-4 text-lg md:flex-row">
               <Link
-                href="mailto:info@idealsolutions.com"
+                href="mailto:info@idealsolutionsne.co.uk"
                 className="flex items-center gap-2 text-white hover:text-[var(--secondary-500)] transition"
               >
                 <Mail className="h-7 w-7 text-[var(--secondary-500)]" />
-                info@idealsolutions.com
+                info@idealsolutionsne.co.uk
               </Link>
-              <Link href="tel:+442012345678" className="flex items-center gap-2 text-white hover:text-[var(--secondary-500)] transition">
+              <Link href="tel:+447855175014" className="flex items-center gap-2 text-white hover:text-[var(--secondary-500)] transition">
                 <Phone className="h-7 w-7 text-[var(--secondary-500)]" />
-                +44 (0) 20 1234 5678
+                +44 7855 175014
               </Link>
               <Link
                 href="https://idealsolutions.com"

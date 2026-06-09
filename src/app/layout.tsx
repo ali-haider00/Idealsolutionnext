@@ -9,7 +9,17 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "IDEAL SOLUTIONS - Digital & Utility Services",
-  description: "Empowering UK businesses and homes with smarter energy and utility solutions. Transform your business with cutting-edge digital solutions.",
+  description:
+    "Empowering UK businesses and homes with smarter energy and utility solutions. Transform your business with cutting-edge digital solutions.",
+  icons: {
+    icon: [
+      { url: "/assets/favi-icon.jpeg", type: "image/jpeg" },
+    ],
+    shortcut: "/assets/favi-icon.jpeg",
+    apple: [
+      { url: "/assets/favi-icon.jpeg", sizes: "180x180", type: "image/jpeg" },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -18,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );

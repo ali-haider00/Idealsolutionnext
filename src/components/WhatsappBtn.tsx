@@ -3,7 +3,7 @@
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/03477722607" // Replace with your actual WhatsApp number (international format, no + or spaces)
+      href="https://wa.me/447855175014" // Replace with your actual WhatsApp number (international format, no + or spaces)
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 group"

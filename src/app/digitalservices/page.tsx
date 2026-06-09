@@ -182,23 +182,23 @@ export default function DigitalHome() {
       </section>
 <AboutSection />
       {/* Services Section - Updated Cards */}
-      <section className="py-24 px-4 bg-white">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <span className="px-5 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">Our Expertise</span>
-            <h2 className="text-5xl font-bold text-slate-900 mt-4 mb-4">Comprehensive Digital Solutions</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <span className="px-4 sm:px-5 py-2 bg-blue-100 text-blue-700 rounded-full text-xs sm:text-sm font-semibold">Our Expertise</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mt-4 mb-4">Comprehensive Digital Solutions</h2>
+            <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
               End-to-end digital services designed to elevate your brand and accelerate growth
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -210,19 +210,19 @@ export default function DigitalHome() {
               >
                 <div className={`h-1.5 w-full bg-gradient-to-r ${service.color}`} />
                 
-                <div className="p-9">
-                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.color} text-white mb-8 group-hover:rotate-12 transition-transform`}>
+                <div className="p-6 sm:p-8 md:p-9">
+                  <div className={`inline-flex p-3 sm:p-4 rounded-2xl bg-gradient-to-br ${service.color} text-white mb-6 sm:mb-8 group-hover:rotate-12 transition-transform`}>
                     {service.icon}
                   </div>
 
-                  <h3 className="text-2xl font-bold text-slate-900 digital-dark:text-white mb-3">{service.title}</h3>
-                  <p className="text-slate-600 digital-dark:text-gray-300 mb-8 leading-relaxed">{service.description}</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 digital-dark:text-white mb-3">{service.title}</h3>
+                  <p className="text-sm sm:text-base text-slate-600 digital-dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed">{service.description}</p>
 
-                  <ul className="space-y-3">
+                  <ul className="space-y-2 sm:space-y-3">
                     {service.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-3 text-slate-600 digital-dark:text-gray-300">
-                        <CheckCircle className="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0" />
-                        <span>{feature}</span>
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm sm:text-base">{feature}</span>
                       </li>
                     ))}
                   </ul>

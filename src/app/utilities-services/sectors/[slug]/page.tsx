@@ -1,9 +1,9 @@
 import PageBanner from '@/components/ui/PageBanner';
 
 interface SectorPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 const sectorData: Record<string, { title: string; description: string; services: string[]; challenges: string[] }> = {
@@ -117,8 +117,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function SectorPage({ params }: SectorPageProps) {
-  const sector = sectorData[params.slug];
+export default async function SectorPage({ params }: SectorPageProps) {
+  const { slug } = await params;
+  const sector = sectorData[slug];
 
   if (!sector) {
     return (

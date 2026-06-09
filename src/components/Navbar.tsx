@@ -71,6 +71,7 @@ export default function Navbar() {
                   width={64}
                   height={64}
                   className="h-16 w-auto rounded-xl object-cover"
+                  priority
                 />
               </Link>
             </div>

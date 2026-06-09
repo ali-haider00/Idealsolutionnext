@@ -4,18 +4,33 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { ArrowRight, Code, Zap, Sparkles, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
 export default function Landing() {
   const router = useRouter();
   const clickSound = useRef<HTMLAudioElement | null>(null);
 
-  const playSound = () => {
+  const playSound = async () => {
     if (clickSound.current) {
-      clickSound.current.currentTime = 0;
-      clickSound.current.play();
+      try {
+        clickSound.current.currentTime = 0;
+        await clickSound.current.play();
+      } catch (error) {
+        // Ignore errors when media is removed from document
+        console.log('Audio play prevented:', error);
+      }
     }
   };
+
+  // Cleanup audio on unmount
+  useEffect(() => {
+    return () => {
+      if (clickSound.current) {
+        clickSound.current.pause();
+        clickSound.current.currentTime = 0;
+      }
+    };
+  }, []);
 
   const handleDigitalClick = () => {
     playSound();
@@ -46,6 +61,7 @@ export default function Landing() {
             width={60}
             height={60}
             className="h-10 md:h-14 w-auto rounded-lg object-cover shadow-md"
+            priority
           />
           <div className="ml-3 hidden sm:block">
             <h1 className="text-base md:text-lg font-bold text-slate-800">

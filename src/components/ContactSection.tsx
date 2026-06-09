@@ -34,12 +34,13 @@ export default function ContactSection() {
               Visit Us
             </h3>
             <p className="text-[var(--text-muted)] mb-4">
-              123 Business Street<br />
-              Manchester, UK<br />
-              M1 2AB
+              166 West Road<br />
+              Newcastle Upon Tyne<br />
+              United Kingdom<br />
+              NE4 9QB
             </p>
             <a 
-              href="mailto:info@idealsolutions.co.uk" 
+              href="mailto:info@idealsolutionsne.co.uk" 
               className="text-[var(--primary-600)] hover:text-[var(--primary-700)] font-medium"
             >
               Get Directions
@@ -58,12 +59,12 @@ export default function ContactSection() {
               Call Us
             </h3>
             <p className="text-[var(--text-muted)] mb-4">
-              0161 123 456<br />
+              +44 7855 175014<br />
               Mon-Fri: 9am-6pm<br />
               Sat: 10am-2pm
             </p>
             <a 
-              href="tel:0161123456" 
+              href="tel:+447855175014" 
               className="text-[var(--primary-600)] hover:text-[var(--primary-700)] font-medium"
             >
               Call Now
@@ -82,12 +83,12 @@ export default function ContactSection() {
               Email Us
             </h3>
             <p className="text-[var(--text-muted)] mb-4">
-              info@idealsolutions.co.uk<br />
+              info@idealsolutionsne.co.uk<br />
               24/7 Support<br />
               Quick Response
             </p>
             <a 
-              href="mailto:info@idealsolutions.co.uk" 
+              href="mailto:info@idealsolutionsne.co.uk" 
               className="text-[var(--primary-600)] hover:text-[var(--primary-700)] font-medium"
             >
               Send Email
